@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Dashboard</title>
+
+        <!-- Bootstrap Libraries -->
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        
+        <!-- CSS -->
+		
+		<link rel="stylesheet" href="css/dashboard.css">
+		<link rel="stylesheet" href="css/glyphicons.css">
+        
+        <!-- Web3 Library -->
+		
+		<script src="js/web3.min.js"></script>
+	
+	</head> 
+	
+	<body onload="loading()">
+            <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+					<a class="navbar-brand" href="index.html">
+							<img src="img/ether props-cut.png" width="30" height="30" class="d-inline-block align-top" alt="">
+							Ether Props
+						  </a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					  <span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNav">
+					  <ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+						  <a class="nav-link" href="index.html">Home</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="properties.html">Properties</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="listproperty.html">List Property</a>
+						</li>
+						<li class="nav-item">
+								<a class="nav-link" href="token.html">Token</a>
+						</li>
+						<li class="nav-item">
+								<a class="nav-link" href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+						</li>
+						<li class="nav-item active">
+								<a class="nav-link" href="dashboard.html" id="name">Name</a>
+						</li>
+
+					  </ul>
+					</div>
+									</nav>
+
+									<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+											<div class="modal-dialog" role="document">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h5 class="modal-title" id="exampleModalLabel">Are you sure you want to Delete Account!</h5>
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+															<span aria-hidden="true">&times;</span>
+														</button>
+													</div>
+													<div class="modal-body">
+														Once you deleted your account you will not be able to manage your properties.
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+														<button type="button" class="btn btn-danger" onclick="deleteaccount()" data-dismiss="modal">Confirm Delete</button>
+													</div>
+												</div>
+											</div>
+										</div>
+
+									<div class = "centered" id="loader">
+										<div class = "blob-1"></div>
+										<div class = "blob-2"></div>
+									</div>
+									
+									<ul class="nav nav-pills mb-3 nav-justified" id="pills-tab" role="tablist">
+										<li class="nav-item">
+											<a class="nav-link active" id="pills-account-tab" data-toggle="pill" href="#pills-account" role="tab" aria-controls="pills-properties" aria-selected="true">Account Details</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" id="pills-properties-tab" data-toggle="pill" href="#pills-properties" role="tab" aria-controls="pills-properties" aria-selected="false">My Properties</a>
+										</li>
+									</ul>
+									<div class="alert-div"><div class="alert alert-success alert-dismissible" id="updated">
+										<button type="button" class="close" onclick="hidealert()">&times;</button>
+										<strong>Success!</strong> Details updated.
+									</div>
+									<div class="tab-content" id="pills-tabContent">
+										<div class="tab-pane fade show active" id="pills-account" role="tabpanel" aria-labelledby="pills-account-tab">
+											<form class="update-form">
+													<div class="form-group col-md-2">
+															<label for="id">Member Id</label>
+															<input type="number" class="form-control" id="id" placeholder="Id" readonly>
+														</div>
+												<div class="form-group col-md-6">
+														<label for="etheraddress">Ether Account Address</label>
+														<input type="text" class="form-control" id="etheraddress" readonly>
+												</div>
+												<div class="form-row col-md-12">
+													<div class="form-group col-md-2">
+														<label for="ebal">Ether Balance</label>
+														<input type="number" class="form-control" id="ebal" readonly>
+													</div>
+													<div class="form-group col-md-2">
+															<label for="tbal">Token( Pop Token ) Balance</label>
+															<input type="number" class="form-control" id="tbal" readonly>
+														</div>
+													</div>
+																	<div class="form-group col-md-6">
+																		<label for="namef">Name</label>
+																		<input type="text" class="form-control" id="namef" placeholder="Full Name">
+																	</div>
+																	<div class="form-group col-md-6">
+																				<label for="email">Email</label>
+																				<input type="email" class="form-control" id="email" placeholder="Email">
+																		</div>
+																<div class="form-group col-md-6">
+																	<label for="phone">Phone No</label>
+																	<input type="number" class="form-control" id="phone" placeholder="03000000000">
+																</div>
+																<div class="form-group col-md-12">
+																	<label for="address">Address</label>
+																	<input type="text" class="form-control" id="address" placeholder="street city and state, country" required>
+																</div>
+																<div class="form-group col-md-12">
+																<center><button type="button" onclick="updateaccount()" class="btn btn-primary" >Save Changes </button>
+																<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Delete Account </button></center>
+																</div>
+															</form>
+										</div>
+										<div class="tab-pane fade" id="pills-properties" role="tabpanel" aria-labelledby="pills-properties-tab">
+											<table class="table table-hover">
+												<thead>
+													<tr>
+													<th scope="col">Property Id</th>
+													<th scope="col">Type</th>
+													<th scope="col">Price</th>
+													<th scope="col">City</th>
+													<th scope="col">Change</th>
+												  </tr>
+												</thead>
+												<tbody class="proptable">
+													
+												</tbody>
+											</table>
+										</div>
+									</div>
+            <!-- Bootstrap Libraries -->
+			
+			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+			
+			<!-- Java Control Libraries -->
+			<script src="js/abi.js"></script>
+			<script src="js/dashboard.js"></script>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+.container-fluid
+{
+    width: 60%;
+    padding-top:20px;
+}
+#notloggedin
+{
+    display: none;
+}
+#notregistered
+{
+    display: none;
+}

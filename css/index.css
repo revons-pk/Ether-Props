@@ -1,0 +1,80 @@
+.parallax1 {
+    /* The image used */
+    background-image: url(/img/architecture_city_view_from_above_buildings_river_118446_3840x2160.jpg);
+    
+
+    
+    /* Full height */
+    min-height: 500px; 
+    
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  
+  /* Position text in the middle of the page/image */
+  .bg-text {
+    color:ghostwhite;
+    font-weight: bold;
+    font-family:Georgia, 'Times New Roman', Times, serif  ;  
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+  }
+  .poptokeninfo{
+    font-family:Georgia, 'Times New Roman', Times, serif  ;
+    font-size: 30px;
+    background-color: black;  
+    height: auto;
+    padding-bottom: 35px; 
+  }
+  .poptoken{
+    font-family:Georgia, 'Times New Roman', Times, serif  ;
+    padding-top: 10px;
+    height: 100%;
+  }
+  .btn{
+    font-size: 20px;
+  }
+  .parallax2{
+    background-image: url(/img/city_buildings_sky_water_805_3840x2160.jpg);
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  .dsd{
+    background-color: ghostwhite;
+    font-family: Georgia, 'Times New Roman', Times, serif  ;
+  }
+ .parallax2text{
+  color:ghostwhite;
+  font-family:Georgia, 'Times New Roman', Times, serif  ;  
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ }
+
+.websitebuy,.websitesell,.blockchain{
+  font-family:Georgia, 'Times New Roman', Times, serif  ;
+    padding-top: 10px;
+    height: 100%;
+    background-color: white;
+    padding-top: 100px;
+}
+.buyinfo,.sellinfo,.blockchaininfo{
+  font-family:Georgia, 'Times New Roman', Times, serif  ;
+    font-size: 15px;
+    background-color: white;  
+    height: auto;
+    padding-bottom: 35px; 
+}

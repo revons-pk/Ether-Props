@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Sign In</title>
+
+        <!-- Bootstrap Libraries -->
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        
+        <!-- CSS -->
+		
+		<link rel="stylesheet" href="css/signin.css">
+		<link rel="stylesheet" href="css/glyphicons.css">
+        
+        <!-- Web3 Library -->
+		
+		<script src="js/web3.min.js"></script>
+	
+	</head> 
+	
+	<body>
+            <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+					<a class="navbar-brand" href="index.html">
+							<img src="img/ether props-cut.png" width="30" height="30" class="d-inline-block align-top" alt="">
+							Ether Props
+						  </a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					  <span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNav">
+					  <ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+						  <a class="nav-link" href="index.html">Home</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="#">Properties</a>
+						</li>
+						<li class="nav-item">
+						  <a class="nav-link" href="listproperty.html">List Property</a>
+						</li>
+						<li class="nav-item">
+								<a class="nav-link" href="#">Token</a>
+						</li>
+						<li class="nav-item">
+								<a class="nav-link" href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+						</li>
+						<li class="nav-item active">
+								<a class="nav-link" href="signin.html"><span class="glyphicon glyphicon-log-in"></span> Sign in</a>
+						</li>
+
+					  </ul>
+					</div>
+                  </nav>
+									
+									<div class="alert-div">
+										<div class="alert alert-warning alert-dismissible" id="notloggedin">
+										<button type="button" class="close" onclick="hidealert()">&times;</button>
+										<strong>Ooops!</strong> Please first log in to Meta Mask.
+								</div>
+								<div class="alert alert-danger alert-dismissible" id="notregistered">
+										<button type="button" class="close" onclick="hidealert()">&times;</button>
+										<strong>Sorry!</strong> You are  not a member of Ether Props. Please <a href="signup.html" class="alert-link">Sign Up first</a>.
+								</div>
+							</div>
+                  <div class="container-fluid" id="signin">
+                        <center><h1 class="h1">Sign in to Manage Property</h1></center>
+                            <form class="Signin-form">
+                                    <div class="form-group col-md-7">
+                                            <label for="etheraddress">Your Ether Account Address</label>
+                                           <input type="text" class="form-control" id="etheraddress" readonly>
+                                    </div>
+                                <div class="form-group col-md-12">
+                                <button type="button" onclick="signin()" class="btn btn-primary">Confirm Sign In with This Address</button>
+                                </div>
+                              </form>
+                    </div>
+            
+            <!-- Bootstrap Libraries -->
+			
+			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+			
+			<!-- Java Control Libraries -->
+			<script src="js/abi.js"></script>
+			<script src="js/signin.js"></script>
+    </body>
+</html>
